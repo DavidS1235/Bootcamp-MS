@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="13"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="BANK" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[entidad bancaria]]></comment>
+	<position x="1100" y="0"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="20"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="20"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<constraint name="BANK_pk" type="pk-constr" table="public.&quot;BANK&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="PRODUCT" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[cliente]]></comment>
+	<position x="1060" y="220"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="ID_BANK">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador de entidad bancaria]]></comment>
+	</column>
+	<column name="ID_CLIENT">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del cliente]]></comment>
+	</column>
+	<column name="ID_STPE_PDUCT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del sub tipo de producto]]></comment>
+	</column>
+	<column name="ID_TPE_CRRCY" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del tipo de moneda]]></comment>
+	</column>
+	<constraint name="PRODUCT_pk" type="pk-constr" table="public.&quot;PRODUCT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="SUB_TYPE_PRODUCT" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[sub tipo de producto
+- AHORRO
+- CUENTA CORRIENTE
+- PLAZO FIJO
+- PERSONAL
+- EMPRESARIAL]]></comment>
+	<position x="1500" y="300"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<column name="ID_TPE_PDUCT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del tipo de producto]]></comment>
+	</column>
+	<constraint name="SUB_TYPE_PRODUCT_pk" type="pk-constr" table="public.&quot;SUB_TYPE_PRODUCT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_TYPE_PRODUCT" index="4"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="TYPE_PRODUCT_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="TYPE_PRODUCT" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[tipo de producto]]></comment>
+	<position x="1940" y="300"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<constraint name="TYPE_PRODUCT_pk" type="pk-constr" table="public.&quot;TYPE_PRODUCT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="STATUS_PRODUCT" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[estado de producto
+- ABIERTO
+- CERRADO
+- SUSPENDIDO]]></comment>
+	<position x="1940" y="20"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<constraint name="STATUS_PRODUCT_pk" type="pk-constr" table="public.&quot;STATUS_PRODUCT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="PRODUCT_STATUS_PRODUCT" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[movimiento de estados de producto]]></comment>
+	<position x="1500" y="20"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="ID_PRODUCT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador de producto]]></comment>
+	</column>
+	<column name="ID_STTUS_PDUCT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del estado de producto]]></comment>
+	</column>
+	<column name="FLG_CURRENT" not-null="true">
+		<type name="bit" length="0"/>
+		<comment><![CDATA[flag indicador de registro vigente]]></comment>
+	</column>
+	<column name="FEC_BEGINNING" not-null="true">
+		<type name="date" length="0"/>
+		<comment><![CDATA[fecha de inicio]]></comment>
+	</column>
+	<column name="FEC_FINISH">
+		<type name="date" length="0"/>
+		<comment><![CDATA[fecha de finalizacion]]></comment>
+	</column>
+	<constraint name="PRODUCT_STATUS_PRODUCT_pk" type="pk-constr" table="public.&quot;PRODUCT_STATUS_PRODUCT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_STATUS_PRODUCT" index="6"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="STATUS_PRODUCT_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="TYPE_CURRENCY" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[tipo de moneda
+- SOL
+- EURO
+- DOLAR]]></comment>
+	<position x="1500" y="520"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<constraint name="TYPE_CURRENCY_pk" type="pk-constr" table="public.&quot;TYPE_CURRENCY&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="TYPE_CLIENT" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[tipo de cliente
+- PERSONA NATURAL
+- PERSONA JURIDICA]]></comment>
+	<position x="240" y="420"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE" not-null="true">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<constraint name="TYPE_CLIENT_pk" type="pk-constr" table="public.&quot;TYPE_CLIENT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="CLIENT" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[cliente]]></comment>
+	<position x="680" y="220"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="CODE">
+		<type name="varchar" length="5"/>
+		<comment><![CDATA[codigo]]></comment>
+	</column>
+	<column name="ID_PERSON" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador de persona]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<column name="ID_TPE_CLIENT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del tipo de cliente]]></comment>
+	</column>
+	<constraint name="CLIENT_pk" type="pk-constr" table="public.&quot;CLIENT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="PERSON" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[persona]]></comment>
+	<position x="200" y="200"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="ID_TPE_DOCUMENT">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del tipo de documento]]></comment>
+	</column>
+	<column name="DOCUMENT">
+		<type name="varchar" length="20"/>
+		<comment><![CDATA[numero de documento]]></comment>
+	</column>
+	<column name="NAME" not-null="true">
+		<type name="varchar" length="100"/>
+		<comment><![CDATA[nombre]]></comment>
+	</column>
+	<column name="PATERNAL" not-null="true">
+		<type name="varchar" length="100"/>
+		<comment><![CDATA[apellido paterno]]></comment>
+	</column>
+	<column name="MATERNAL">
+		<type name="varchar" length="100"/>
+		<comment><![CDATA[apellido materno]]></comment>
+	</column>
+	<column name="ID_TPE_PERSON" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador de tipo de persona]]></comment>
+	</column>
+	<constraint name="PERSON_pk" type="pk-constr" table="public.&quot;PERSON&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="STATUS_PRODUCT_has_many_PRODUCT_STATUS_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#1d597c"
+	 src-table="public.&quot;STATUS_PRODUCT&quot;"
+	 dst-table="public.&quot;PRODUCT_STATUS_PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="PRODUCT_has_many_PRODUCT_STATUS_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#f6325b"
+	 src-table="public.&quot;PRODUCT&quot;"
+	 dst-table="public.&quot;PRODUCT_STATUS_PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="TYPE_PRODUCT_has_many_SUB_TYPE_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#9ee935"
+	 src-table="public.&quot;TYPE_PRODUCT&quot;"
+	 dst-table="public.&quot;SUB_TYPE_PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="SUB_TYPE_PRODUCT_has_many_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7caa2d"
+	 src-table="public.&quot;SUB_TYPE_PRODUCT&quot;"
+	 dst-table="public.&quot;PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="TYPE_CURRENCY_has_many_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#bc09d9"
+	 src-table="public.&quot;TYPE_CURRENCY&quot;"
+	 dst-table="public.&quot;PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="TYPE_CLIENT_has_many_CLIENT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ae074d"
+	 src-table="public.&quot;TYPE_CLIENT&quot;"
+	 dst-table="public.&quot;CLIENT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="PERSON_has_many_CLIENT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#0197d0"
+	 src-table="public.&quot;PERSON&quot;"
+	 dst-table="public.&quot;CLIENT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="CLIENT_has_many_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#24dff7"
+	 src-table="public.&quot;CLIENT&quot;"
+	 dst-table="public.&quot;PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="BANK_has_many_PRODUCT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#446ccb"
+	 src-table="public.&quot;BANK&quot;"
+	 dst-table="public.&quot;PRODUCT&quot;"
+	 src-required="false" dst-required="false"/>
+
+<table name="MOVEMENT" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment><![CDATA[movimiento de producto]]></comment>
+	<position x="1060" y="600"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador]]></comment>
+	</column>
+	<column name="ID_PRODUCT" not-null="true">
+		<type name="bigint" length="5"/>
+		<comment><![CDATA[identificador de producto]]></comment>
+	</column>
+	<column name="FEC_MOVEMENT" not-null="true">
+		<type name="date" length="50"/>
+		<comment><![CDATA[fecha del movimiento]]></comment>
+	</column>
+	<column name="ID_TPE_MVMENT" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador de tipo de movimiento]]></comment>
+	</column>
+	<column name="NUM_AMOUNT" not-null="true">
+		<type name="decimal" length="10"/>
+		<comment><![CDATA[monto]]></comment>
+	</column>
+	<constraint name="TYPE_CURRENCY_pk_cp" type="pk-constr" table="public.&quot;MOVEMENT&quot;">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_PRODUCT1" index="4"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="PRODUCT_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="PRODUCT_has_many_MOVEMENT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#e39759"
+	 src-table="public.&quot;PRODUCT&quot;"
+	 dst-table="public.&quot;MOVEMENT&quot;"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
