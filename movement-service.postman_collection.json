@@ -147,6 +147,126 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:8006/movement/type/findall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fgActive\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8006/movement/type/findall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8006",
+					"path": [
+						"movement",
+						"type",
+						"findall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8006/movement/type/find",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"629efd27a18d938545222c7e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8006/movement/type/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8006",
+					"path": [
+						"movement",
+						"type",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8006/movement/type/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"code\": \"00008\",\r\n            \"name\": \"PRUEBA\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8006/movement/type/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8006",
+					"path": [
+						"movement",
+						"type",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8006/movement/type/delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"62a1d4b1dc52ed384f137f76\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8006/movement/type/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8006",
+					"path": [
+						"movement",
+						"type",
+						"delete"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
