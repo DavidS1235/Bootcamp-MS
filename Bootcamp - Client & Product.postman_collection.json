@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "05765055-ed8e-4614-b427-d3d3cc498df6",
+		"name": "Bootcamp - Client & Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20820525"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8010/api/person",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"person"
+					]
+				},
+				"description": "Lista las personas registradas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/person",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTypeDocument\": \"RUC\",\r\n    \"document\": \"201029456345\",\r\n    \"name\": \"EMPRESA S.A.C\",\r\n    \"idTpePerson\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/person/62a8b4ed92fa990393897a62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"person",
+						"62a8b4ed92fa990393897a62"
+					]
+				},
+				"description": "Busca una persona por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTypeDocument\": \"RUC\",\r\n    \"document\": \"201029456345\",\r\n    \"name\": \"EMPRESA S.A.C\",\r\n    \"idTpePerson\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"person"
+					]
+				},
+				"description": "Crea una persona"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTypeDocument\": \"RUC\",\r\n    \"document\": \"201029456345\",\r\n    \"name\": \"EMPRESA A S.A.C\",\r\n    \"idTpePerson\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/person/62a8b4ed92fa990393897a62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"person",
+						"62a8b4ed92fa990393897a62"
+					]
+				},
+				"description": "Actualiza una persona por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/person",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTypeDocument\": \"RUC\",\r\n    \"document\": \"201029456345\",\r\n    \"name\": \"EMPRESA A S.A.C\",\r\n    \"idTpePerson\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/person/62a8b4ed92fa990393897a62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"person",
+						"62a8b4ed92fa990393897a62"
+					]
+				},
+				"description": "Elimina una persona por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/typeclient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/typeclient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"typeclient"
+					]
+				},
+				"description": "Lista los tipos de cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/typeclient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\":\"TPC0002\",\r\n    \"name\": \"empresarial\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/typeclient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"typeclient"
+					]
+				},
+				"description": "Crea un tipo de cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/typeclient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\":\"TPC0002\",\r\n    \"name\": \"empresarial\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/typeclient/62a8bbbdabe16e5f179c8527",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"typeclient",
+						"62a8bbbdabe16e5f179c8527"
+					]
+				},
+				"description": "Actualiza un tipo de cliente por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/typeclient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\":\"TPC0002\",\r\n    \"name\": \"empresarial\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/typeclient/62a8bbbdabe16e5f179c8527",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"typeclient",
+						"62a8bbbdabe16e5f179c8527"
+					]
+				},
+				"description": "Elimina un tipo de cliente por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"client"
+					]
+				},
+				"description": "Lista todos los clientes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/client/62a8bd7a0414dd6e11875198",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"client",
+						"62a8bd7a0414dd6e11875198"
+					]
+				},
+				"description": "Obtiene un cliente por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"C0001\",\r\n    \"idPerson\":\"62a10b5bd1fe4720dc660e90\",\r\n    \"name\": \"Juan Solis Hernandez\",\r\n    \"person\": {\r\n        \"id\": \"62a10b5bd1fe4720dc660e90\",\r\n        \"idTypeDocument\": \"DNI\",\r\n        \"document\": \"23523\",\r\n        \"name\": \"Jua4n\",\r\n        \"paternal\": \"Solis\",\r\n        \"maternal\": \"Hernandez\",\r\n        \"idTpePerson\": 1\r\n    },\r\n    \"typeClient\": {\r\n        \"id\": \"62a8bbbdabe16e5f179c8527\",\r\n        \"code\": \"TPC0001\",\r\n        \"name\": \"personal\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"client"
+					]
+				},
+				"description": "Crea un cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/client/62a8bd7a0414dd6e11875198",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"client",
+						"62a8bd7a0414dd6e11875198"
+					]
+				},
+				"description": "Actualiza un cliente por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/client/62a8bd7a0414dd6e11875198",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"client",
+						"62a8bd7a0414dd6e11875198"
+					]
+				},
+				"description": "Elimina un cliente por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8005/api/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idBank\": \"IBK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"api",
+						"product"
+					]
+				},
+				"description": "Consulta los productos existentes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8005/api/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idBank\": \"IBK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/api/product/62a3ffb95b39ca3ca55c25b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"api",
+						"product",
+						"62a3ffb95b39ca3ca55c25b6"
+					]
+				},
+				"description": "Consulta producto por id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8005/api/product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idBank\": \"IBK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/api/product/62a3f91e1736bf27b7daab2b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"api",
+						"product",
+						"62a3f91e1736bf27b7daab2b"
+					]
+				},
+				"description": "Elimina producto por id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product"
+					]
+				},
+				"description": "Consulta productos desde el lado de cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/product/ctaahorro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"ctaahorro"
+					]
+				},
+				"description": "Consulta producto por id desde el lado de cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/ctaahorro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"ctaahorro"
+					]
+				},
+				"description": "Llama a método para crear una cuenta de ahorro desde servicio cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/ctacorriente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"ctacorriente"
+					]
+				},
+				"description": "Llama a método para crear una cuenta corriente desde servicio cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/pzofijo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"pzofijo"
+					]
+				},
+				"description": "Llama a la creación de una cuenta a plazo fijo desde cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/credpersonal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"credpersonal"
+					]
+				},
+				"description": "Llama a la creación de un crédito personal desde cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/credempresarial",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"credempresarial"
+					]
+				},
+				"description": "Llama a la creación de un crédito empresarial desde cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/tc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"tc"
+					]
+				},
+				"description": "Llama a la creación de una tarjeta de crédito desde el servicio cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"id"
+					]
+				},
+				"description": "Actualiza datos de un producto desde el servicio cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8010/api/product/ctaahorro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/product/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"product",
+						"id"
+					]
+				},
+				"description": "Elimina un producto desde el servicio cliente."
+			},
+			"response": []
+		}
+	]
+}
